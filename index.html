@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="page-wrapper">
+        
+        <!-- Top Ad Section -->
+        <div class="ad-space top-ad">
+            Space for Ad
+        </div>
+
+        <!-- Main Layout: Grid -->
+        <div class="content-row">
+            
+            <!-- Left Sidebar -->
+            <div class="side-ad side-left">
+                <!-- Empty for now, just border -->
+            </div>
+
+            <!-- Center Content -->
+            <div class="main-content">
+                <header class="gen-header">
+                    <h1>Random Number Generator</h1>
+                    <div class="sub-header">
+                        <span>Free</span>
+                        <span class="dot">•</span>
+                        <span>No Signup</span>
+                        <span class="dot">•</span>
+                        <span>Random</span>
+                    </div>
+                </header>
+
+                <div class="grid-container">
+                    <!-- 2 Digits -->
+                    <div class="grid-col">
+                        <div class="col-header">2-digits</div>
+                        <div class="col-body">
+                            <div class="label">2-digits</div>
+                            <div class="display-number" id="num-2">16</div>
+                            <button class="generate-btn" onclick="generateNumber(2)">Generate</button>
+                        </div>
+                    </div>
+
+                    <!-- 3 Digits -->
+                    <div class="grid-col">
+                        <div class="col-header">3-digits</div>
+                        <div class="col-body">
+                            <div class="label">3-digits</div>
+                            <div class="display-number" id="num-3">244</div>
+                            <button class="generate-btn" onclick="generateNumber(3)">Generate</button>
+                        </div>
+                    </div>
+
+                    <!-- 4 Digits -->
+                    <div class="grid-col">
+                        <div class="col-header">4-digits</div>
+                        <div class="col-body">
+                            <div class="label">4-digits</div>
+                            <div class="display-number" id="num-4">7634</div>
+                            <button class="generate-btn" onclick="generateNumber(4)">Generate</button>
+                        </div>
+                    </div>
+
+                    <!-- 5 Digits -->
+                    <div class="grid-col">
+                        <div class="col-header">5-digits</div>
+                        <div class="col-body">
+                            <div class="label">5-digits</div>
+                            <div class="display-number" id="num-5">61427</div>
+                            <button class="generate-btn" onclick="generateNumber(5)">Generate</button>
+                        </div>
+                    </div>
+
+                    <!-- 6 Digits -->
+                    <div class="grid-col">
+                        <div class="col-header">6-digits</div>
+                        <div class="col-body">
+                            <div class="label">6-digits</div>
+                            <div class="display-number" id="num-6">139575</div>
+                            <button class="generate-btn" onclick="generateNumber(6)">Generate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="side-ad side-right">
+                <!-- Empty for now, just border -->
+            </div>
+            
+        </div>
+
+        <!-- Bottom Ad Section -->
+        <div class="ad-space bottom-ad">
+            Ad Space
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

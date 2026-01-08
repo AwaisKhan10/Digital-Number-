@@ -1,0 +1,298 @@
+:root {
+    --color-bg-dark: #0A1B0B;
+    --color-gold-light: #DFD55C;
+    --color-gold-dark: #CDAA06;
+    --color-text-light: #ffffff;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; removed to allow top scrolling if needed */
+    position: relative;
+    overflow-x: hidden;
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keep background fixed */
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Page Wrapper */
+.page-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    position: relative;
+    z-index: 1;
+    padding: 20px 14px;
+}
+
+/* Ad Spaces */
+.ad-space {
+    border: 2px solid var(--color-gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    background-color: rgba(10, 27, 11, 0.8);
+    box-shadow: 0 0 10px rgba(223, 213, 92, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.top-ad {
+    width: min(920px, 100%);
+    height: 100px; /* Kept 100px as per previous, or 50px as per snippet? Keeping 100px for visibility */
+}
+
+.bottom-ad {
+    width: min(970px, 100%);
+    height: 150px;
+}
+
+/* Main Layout Grid */
+.content-row {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 920px) 300px; /* Adjusted center max width slightly */
+    grid-template-areas: "left main right";
+    gap: 16px;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+/* Sidebars */
+.side-ad {
+    grid-area: auto; /* Handled by specific classes */
+    width: 272px;
+    height: 724px;
+    
+    /* Inherit Ad Space styling but add sticky */
+    border: 2px solid var(--color-gold-light);
+    background-color: rgba(10, 27, 11, 0.8);
+    box-shadow: 0 0 10px rgba(223, 213, 92, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    
+    position: sticky;
+    top: 24px;
+    z-index: 1;
+}
+
+.side-left {
+    grid-area: left;
+}
+
+.side-right {
+    grid-area: right;
+}
+
+/* Center Content */
+.main-content {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* Header */
+.gen-header {
+    border: 2px solid var(--color-gold-light);
+    background-color: rgba(10, 27, 11, 0.9);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(223, 213, 92, 0.3);
+}
+
+.gen-header h1 {
+    font-size: 2rem;
+    color: var(--color-gold-light);
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+.sub-header .dot {
+    color: var(--color-gold-light);
+}
+
+/* Grid System for Numbers */
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap; /* Keep them in a row */
+}
+
+.grid-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.col-header {
+    border: 1px solid var(--color-gold-light);
+    background-color: rgba(10, 27, 11, 0.9);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem; /* Slightly smaller to fit */
+    color: #ffffff;
+}
+
+.col-body {
+    border: 1px solid var(--color-gold-light);
+    background-color: rgba(10, 27, 11, 0.85);
+    padding: 20px 5px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.label {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    margin-bottom: 15px;
+}
+
+.display-number {
+    font-size: 1.8rem; /* Adjusted for space */
+    font-weight: 500;
+    color: #ffffff;
+    margin: auto 0;
+    word-break: break-all; /* Prevent overflow */
+    text-align: center;
+}
+
+.generate-btn {
+    background: linear-gradient(180deg, #C2B647 0%, #AF9205 100%);
+    border: none;
+    padding: 8px 0;
+    width: 90%;
+    font-size: 0.9rem;
+    color: #3e3300;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: filter 0.2s;
+}
+
+.generate-btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-row {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main";
+        gap: 20px;
+    }
+
+    .side-ad {
+        display: none; /* Hide sidebars on mobile/tablet as per reference */
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .grid-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .grid-col {
+        /* Force 3 items per row: (100% / 3) - gap adjustment */
+        flex: 0 0 calc(33.333% - 7px);
+        min-width: auto;
+        max-width: none;
+    }
+
+    /* Adjust font sizes for smaller columns */
+    .col-header {
+        font-size: 0.8rem;
+        padding: 8px 4px;
+    }
+
+    .display-number {
+        font-size: 1.5rem;
+    }
+
+    .generate-btn {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-col {
+        /* On very small screens, maybe still try 3? or switch to 2? 
+           User asked "exactly like that" (3 columns), so let's try to maintain it 
+           unless it breaks. 3 columns on 375px is tight but possible (~115px).
+        */
+        flex: 0 0 calc(33.333% - 7px);
+    }
+    
+    .col-body {
+        padding: 15px 4px; /* Minimize padding */
+        height: 260px; /* Reduce height */
+    }
+}
